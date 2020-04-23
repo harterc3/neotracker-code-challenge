@@ -16,11 +16,7 @@
 
 - I did not include any automated testing for the sorting/filtering logic because the `json-server` library has functionality built-in for both.
 
-## Given More Time I Would..
-
--api response handler (assuming success right now)
--dev/prod environments as mentioned in project description
--responsive and overall design
+## Given More Time, I Would..
 
 - **Create an ApiResponseHandler class** to correctly handle failed ajax calls. I took a naive approach assuming that all of our calls would succeed but a failure should show a user-friendly error message as well as log an event to our error tracking service.
 
