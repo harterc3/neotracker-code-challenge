@@ -1,3 +1,35 @@
+# Shipment Tracker
+
+## Run the app
+- From the project directory, run `yarn`
+- From the project directory, run `yarn server`
+- Using a new terminal, from the project directory, run `yarn start`
+
+## Design Decisions
+
+- I used a **directory structure** consistent with work I've done in the past
+  - **api** contains all the files that interact with the web API. Since we're only using the API for shipment data, we only have `shipments.api.js`.
+  - **components** contains all generic components that can be used across the entire app. Usually these components have details and examples in some kind of styleguide.
+  - **pages** contains the different pages in our app. Each `*Page` folder contains the React component for the page as well as a **components** folder with any page-specific components.
+  - **styles** contains css values for things like Fonts, Colors, etc. It's good practice to use the constant values defined here when styling components rather than manually entering in style values for every single component. (I also didn't make full use of this due to the time constraint)
+  - **util** contains helper functions that are generic and could be used from aywhere in the app. Currently the only thing in here is a copy of the `debounce` function from the lodash library.
+
+- I did not include any automated testing for the sorting/filtering logic because the `json-server` library has functionality built-in for both.
+
+## Given More Time I Would..
+
+-api response handler (assuming success right now)
+-dev/prod environments as mentioned in project description
+-responsive and overall design
+
+- **Create an ApiResponseHandler class** to correctly handle failed ajax calls. I took a naive approach assuming that all of our calls would succeed but a failure should show a user-friendly error message as well as log an event to our error tracking service.
+
+- **Set up a DEBUG environment variable** that when enabled would execute logging statements around error-prone and informational pieces of code such as API calls, etc.
+
+- **Figure out how to set up a framework for responsive design** to make responsive UI creation uniform across the app. I've done this before by setting up a `MediaQuery.js` file in the `styles` folder that can then be used in my styled component definitions.
+
+- **Clean up the design in general** because it isn't as pretty as I'd like it to be.
+
 # NEO Tracker Coding Challenge
 
 **Your goal is to set up the front-end UI for an application which enables the user to view and manage shipments. The main goal is for the user to check shipments at a glance. This allows users to make faster decisions and plan ahead of time.**
