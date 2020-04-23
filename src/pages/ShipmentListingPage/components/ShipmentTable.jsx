@@ -96,7 +96,7 @@ export default function ShipmentTable({ data, onClickRow, queryOptions, setQuery
       </StyledTable>
       <>
         {queryOptions.page > 1 && <button onClick={() => setQueryOptions({ ...queryOptions, page: queryOptions.page - 1 })}>Prev</button>}
-        {queryOptions.page == 1 && <button onClick={() => setQueryOptions({ ...queryOptions, page: queryOptions.page + 1 })}>Next</button>}
+        {queryOptions.pageSize == data.length && <button onClick={() => setQueryOptions({ ...queryOptions, page: queryOptions.page + 1 })}>Next</button>}
       </>
     </TableWrapper>
   )
